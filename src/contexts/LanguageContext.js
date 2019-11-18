@@ -20,5 +20,17 @@ export class LanguageProvider extends Component {
         console.error(error)
         this.setState({ error })
       }
-
+      render() {
+          const value = {
+              words: this.state.words,
+              error: this.state.error,
+              setError: this.setError,
+              setWords: this.setWords,
+          }
+      }
+      return (
+          <LanguageContext.Provider value={value}>
+          {this.props.children}
+          </LanguageContext.Provider>
+      )
 }
