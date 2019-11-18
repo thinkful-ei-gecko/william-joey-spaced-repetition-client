@@ -12,5 +12,19 @@ export default class Dashboard extends React.Component {
     }
     renderWords(){
         const { words = []} = this.context
+        return(
+        
+            <h2 id="wordsH2">Words</h2>
+            <ul className="WordsList"
+                {words.map( word =>
+                    <div key={words.id}>
+                        <li>{word.translation}</li>
+                        <li>{word.original}</li>
+
+                    </div>
+                    )}
+            </ul>
+        
+        )
     }
 }
