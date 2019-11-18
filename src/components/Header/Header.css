@@ -9,6 +9,9 @@ header {
     font-size: 18px;
     width: 50%;
 }
+nav{
+    margin-bottom: 4px;
+}
 
 .flexBody {
     display: flex;
@@ -43,18 +46,17 @@ header a:hover {
 .link-logout {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
+    width: 160px;
 }
 
 .logout-nav {
     font-size: 11px;
 }
-
-.username-span {
+.div-span{
     color: white;
     font-size: 11px;
-    margin-right: 1%;
-    width: 150px;
 }
 
 
@@ -66,12 +68,14 @@ header a:hover {
         margin-right: 12px;
         font-size: 13px;
     }
-    .username-span {
-        font-size: 13px;
-    }
     .div-span {
-        width: 150px;
+        font-size: 13px;
+        margin-right: 20px;
     }
+    .link-logout{
+        width: 200px;
+    }
+   
     
 }
 
@@ -86,9 +90,17 @@ header a:hover {
     .flexBody {
         height: 60px;
     }
-    .username-span {
+    .link-logout{
+        width: 300px;
+    }
+    .div-span{
+        color: white;
         font-size: 16.5px;
     }
+    nav{
+        margin-bottom: 0px;
+    }
+    
 }
 
 @media only screen and (min-width: 1300px) {
@@ -99,7 +111,11 @@ header a:hover {
         margin-right: 25px;
         font-size: 18px;
     }
-    .username-span {
+    .link-logout{
+        width: 350px;
+    }
+    .div-span{
+        color: white;
         font-size: 18px;
     }
 }
