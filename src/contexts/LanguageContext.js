@@ -27,10 +27,11 @@ export class LanguageProvider extends Component {
               setError: this.setError,
               setWords: this.setWords,
           }
+          return (
+            <LanguageContext.Provider value={value}>
+            {this.props.children}
+            </LanguageContext.Provider>
+        )
       }
-      return (
-          <LanguageContext.Provider value={value}>
-          {this.props.children}
-          </LanguageContext.Provider>
-      )
+      
 }
