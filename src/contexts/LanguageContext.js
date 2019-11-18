@@ -7,6 +7,7 @@ const LanguageContext = React.createContext({
     setError: () => {},
     setWords: () => {}
 })
+
 export default LanguageContext;
 
 export class LanguageProvider extends Component {
