@@ -7,22 +7,45 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    
-
+    margin-bottom: 3%;
 }
+
 .words-list{
     display: flex;
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
+    padding: 0;
 }
 .score{
     display: flex;
     flex-direction: row;
 }
 .word-incorrect{
-    margin-left: 2vw;
+    margin-left: 3.5vw;
 }
 #original{
     width:200px;
+}
+
+.column-title {
+    font-weight: bold;
+}
+
+.word-correct, .word-incorrect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fa-check {
+    color: green;
+}
+
+.fa-times {
+    color: red;
+}
+
+.span-word {
+    margin-left: 4px;
 }

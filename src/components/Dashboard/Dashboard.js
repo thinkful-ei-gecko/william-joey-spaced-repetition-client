@@ -8,7 +8,6 @@ export default class Dashboard extends React.Component {
     componentDidMount() {
         LanguageService.getLanguageAndWords()
             .then(data => {
-                console.log(data.language);
                 this.context.setWords(data.words);
                 this.context.setLanguage(data.language);
             })
@@ -21,17 +20,21 @@ export default class Dashboard extends React.Component {
         const { words = [], language = {} } = this.context;
         return (
             <>
-                <h2 className="language-h2">{language.name}</h2>
-                <h3 className="total-score">Total Score:{language.total_score}</h3>
-                <h4 id="words-h3">Words</h4>
-                
+                <h2 className="language-h2">You are Learning "{language.name}"</h2>
+                <h3 className="total-score">Total correct answers: {language.total_score}</h3>
+                <h4 id="words-h3">Words to practice</h4>
+
                 <div className="words">
                 {words.map(word =>
                     <ul className='words-list' key={word.id}>
                         <li className='word-li'id="original">{word.original}</li>
                         <div className="score">
-                        <li className='word-correct'>correct:{word.correct_count}</li>
-                        <li className='word-incorrect'>incorrect:{word.incorrect_count}</li>
+                            <li className='word-correct'>
+                                <i className="fa fa-check"><span className='span-word'>{word.correct_count}</span></i>
+                            </li>
+                            <li className='word-incorrect'>
+                                <i className="fa fa-times"><span className='span-word'>{word.incorrect_count}</span></i>
+                            </li>
                         </div>
                     </ul>
                 )}
