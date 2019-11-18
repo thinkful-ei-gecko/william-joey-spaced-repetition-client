@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 
 const LanguageContext = React.createContext({
     words: [],
+    error: null,
+    setError: () => {},
 })
 export default LanguageContext;
 
