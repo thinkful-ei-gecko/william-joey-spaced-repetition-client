@@ -1,4 +1,4 @@
-    form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,10 +6,9 @@
     margin-right: 30vw;
     margin-left: 30vw;
     height: 50vh;
-
 }
 
-input{
+input {
     border: 1px solid darkgrey;
     display: block;
     font-size: 1.1em;
@@ -18,9 +17,9 @@ input{
     text-align: left;
     width: 100%;
     border-radius: 4px;
-  }
-  button {
+}
 
+.Button {
     border: 1px solid #aaa;
     background-color: #eee;
     font-size: 1.1em;
@@ -28,5 +27,4 @@ input{
     padding: 8px 12px;
     font-weight: bold;
     cursor: pointer;
-  
 }
