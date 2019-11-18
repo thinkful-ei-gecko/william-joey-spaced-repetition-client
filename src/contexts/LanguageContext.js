@@ -1,6 +1,22 @@
 import React, { Component } from 'react'
-import LanguageService from '../services/language-service'
+
 
 const LanguageContext = React.createContext({
+    words: [],
 })
 export default LanguageContext;
+
+export class LanguageProvider extends Component {
+    state = {
+        words: [],
+        error: null,
+    }
+    setWords = words =>{
+        this.setState({words})
+    }
+    setError = error => {
+        console.error(error)
+        this.setState({ error })
+      }
+
+}
