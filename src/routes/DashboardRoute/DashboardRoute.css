@@ -10,6 +10,9 @@
 
     margin-bottom: 3%;
 }
+a{
+    text-decoration: none;
+}
 
 .words-list{
     display: flex;
