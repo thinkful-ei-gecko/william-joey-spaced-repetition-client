@@ -11,7 +11,7 @@ class DashboardRoute extends Component {
         <Dashboard />
         <Button>
           <Link to='/learn'>
-          Start Learning
+          Start practicing
           </Link>
         </Button>
       </section>

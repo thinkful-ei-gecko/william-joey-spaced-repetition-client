@@ -7,23 +7,38 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-
     margin-bottom: 3%;
 }
 a{
     text-decoration: none;
 }
 
+.words-ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+}
+
 .words-list{
     display: flex;
     flex-direction: row;
     list-style: none;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     padding: 0;
+    text-align: center;
+    width: 95%;
+    margin-bottom: 3%;
+    border: 1.5px solid black;
+    border-radius: 30px;
 }
+
 .score{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .word-incorrect{
     margin-left: 3.5vw;
@@ -32,24 +47,41 @@ a{
     width:200px;
 }
 
-.column-title {
-    font-weight: bold;
-}
-
 .word-correct, .word-incorrect {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.fa-check {
-    color: green;
-}
-
-.fa-times {
-    color: red;
-}
-
 .span-word {
     margin-left: 4px;
+}
+
+.score-p {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+@media only screen and (min-width: 500px) {
+    .words-list {
+        width: 80%
+    }
+    .score-p{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .words-list {
+        width: 70%
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .words-list {
+        width: 60%
+    }
+    .score-p {
+        font-size: 16px;
+    }
 }

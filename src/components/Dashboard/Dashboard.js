@@ -21,23 +21,21 @@ export default class Dashboard extends React.Component {
         return (
             <>
                 <h2 className="language-h2">You are Learning "{language.name}"</h2>
-                <h3 className="total-score">Total correct answers: {language.total_score}</h3>
-                <h4 id="words-h3">Words to practice</h4>
+                <h3 id="words-h3">Words to practice</h3>
+                <h4 className="total-score">Total correct answers: {language.total_score}</h4>
 
                 <div className="words">
-                {words.map(word =>
-                    <ul className='words-list' key={word.id}>
-                        <li className='word-li'id="original">{word.original}</li>
-                        <div className="score">
-                            <li className='word-correct'>
-                                <i className="fa fa-check"><span className='span-word'>{word.correct_count}</span></i>
-                            </li>
-                            <li className='word-incorrect'>
-                                <i className="fa fa-times"><span className='span-word'>{word.incorrect_count}</span></i>
-                            </li>
-                        </div>
+                    <ul className='words-ul'>
+                        {words.map(word =>
+                                <li key={word.id} className="words-list">
+                                    <h4 id="original">{word.original}</h4>
+                                    <div className="score">
+                                        <p className='score-p'>correct answer count: {word.correct_count}</p>
+                                        <p className='score-p'>incorrect answer count: {word.incorrect_count}</p>
+                                    </div>
+                                </li>
+                        )}
                     </ul>
-                )}
                 </div>
             </>
         )
