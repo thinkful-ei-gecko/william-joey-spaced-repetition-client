@@ -26,10 +26,9 @@ export default class Dashboard extends React.Component {
     
                 {words.map(word =>
                     <ul className='words-list' key={word.id}>
-                        <li className='word-li'>{word.translation}</li>
                         <li className='word-li'>{word.original}</li>
-                        <li className='word-li'>{word.correct_count}</li>
-                        <li className='word-li'>{word.incorrect_count}</li>
+                        <li className='word-li'>correct:{word.correct_count}</li>
+                        <li className='word-li'>incorrect:{word.incorrect_count}</li>
                     </ul>
                 )}
             </>
