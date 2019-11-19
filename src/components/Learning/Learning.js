@@ -13,8 +13,12 @@ export default class Dashboard extends React.Component {
         LanguageService.getHead()
         .then(headWord => {
             this.context.setHeadWord(headWord);
-            
         })
+        .catch(res => {
+            this.context.setError(res.error);
+        })
+
+    }
 
     handleSubmit = e =>{
         e.preventDefault()
@@ -47,7 +51,7 @@ export default class Dashboard extends React.Component {
     //         return <></>
     //     }
     // }
-    render() {
+    render(){
         const { headWord = {} } = this.context;
         
        
@@ -68,4 +72,5 @@ export default class Dashboard extends React.Component {
             </section>
         )
 }
-}
+
+    }
