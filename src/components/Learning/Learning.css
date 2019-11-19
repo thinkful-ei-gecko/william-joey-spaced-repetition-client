@@ -1,0 +1,22 @@
+.learning{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+#word{
+    padding-top: 30px;
+    font-size: 26px;
+}
+.guess-form{
+    padding-top: 25px;
+    margin-left:0px;
+    margin-right:0px;
+    height: 250px;
+}
+#submit-guess-button{
+   margin-top: 70px;
+}
+#word-count{
+    font-size: 13px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import LanguageService from '../../services/language-service';
 import LanguageContext from '../../contexts/LanguageContext';
 import Button from '../../components/Button/Button';
+import './Learning.css';
 
 export default class Dashboard extends React.Component {
     static contextType = LanguageContext
@@ -22,7 +23,7 @@ export default class Dashboard extends React.Component {
 
     handleSubmit = e =>{
         e.preventDefault()
-        let guess = e.target['guess'].value
+        let guess = e.target['learn-guess-input'].value
         LanguageService.postGuess(guess)
     }
     // guessResponse = () =>{
@@ -56,20 +57,22 @@ export default class Dashboard extends React.Component {
         
        
         return (
-            <section>
-                <h2>Translate the word: {headWord.nextWord}</h2>
-                <p>Your total score is: {headWord.totalScore}</p>
-                <form>
-                    <label htmlFor="guess">
+           <section className="learning">
+               <p>Your total score is: {headWord.totalScore}</p>
+                <h2>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
+                <form className="guess-form">
+                    <label htmlFor="learn-guess-input">
                     What's the translation for this word?
                     </label>
-                    <input name="guess" id="guess" type="text" required="required"></input>
-                    <Button type="submit" onClick={this.handleSubmit()}>Submit your answer</Button> 
+                    <input name="learn-guess-input" id="learn-guess-input" type="text" required="required"></input>
+                    <Button type="submit" id="submit-guess-button"onClick={this.handleSubmit}>Submit your answer</Button> 
                 </form>
-                <h4>You have answered this word correctly {headWord.wordCorrectCount} times</h4>
-                <h4>You have answered this word incorrectly {headWord.wordIncorrectCount} times</h4>
+                
+                <p id="word-count">You have answered this word correctly {headWord.wordCorrectCount} times.</p>
+                <p id="word-count">You have answered this word incorrectly {headWord.wordIncorrectCount} times.</p>
+              
                 {/* {this.guessResponse()} */}
-            </section>
+                </section>
         )
 }
 
