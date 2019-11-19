@@ -10,15 +10,11 @@ export default class Dashboard extends React.Component {
     }
     
     componentDidMount() {
-        LanguageService.getLanguageAndWords()
-            .then(data => {
-                this.context.setWords(data.words);
-                this.context.setLanguage(data.language);
-            })
-            .catch(res => {
-                this.context.setError(res.error);
-            })
-    }
+        LanguageService.getHead()
+        .then(headWord => {
+            this.context.setHeadWord(headWord);
+            
+        })
 
     handleSubmit = e =>{
         e.preventDefault()
@@ -52,13 +48,13 @@ export default class Dashboard extends React.Component {
     //     }
     // }
     render() {
-        const { words = [], language = {} } = this.context;
+        const { headWord = {} } = this.context;
         
        
         return (
             <section>
-                <h2>Translate the word: {words[0].original}</h2>
-                <p>Your total score is: {language.total_score}</p>
+                <h2>Translate the word: {headWord.nextWord}</h2>
+                <p>Your total score is: {headWord.totalScore}</p>
                 <form>
                     <label htmlFor="guess">
                     What's the translation for this word?
@@ -66,8 +62,8 @@ export default class Dashboard extends React.Component {
                     <input name="guess" id="guess" type="text" required="required"></input>
                     <Button type="submit" onClick={this.handleSubmit()}>Submit your answer</Button> 
                 </form>
-                <h4>You have answered this word correctly {words[0].correct_count} times</h4>
-                <h4>You have answered this word incorrectly {words[0].incorrect_count} times</h4>
+                <h4>You have answered this word correctly {headWord.wordCorrectCount} times</h4>
+                <h4>You have answered this word incorrectly {headWord.wordIncorrectCount} times</h4>
                 {/* {this.guessResponse()} */}
             </section>
         )
