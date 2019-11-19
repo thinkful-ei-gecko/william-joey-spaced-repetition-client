@@ -7,7 +7,8 @@ const LanguageContext = React.createContext({
     error: null,
     setError: () => {},
     setWords: () => {},
-    setLanguage: () => {}
+    setLanguage: () => {},
+    setHeadWord: () => {},
 })
 
 export default LanguageContext;
@@ -17,6 +18,7 @@ export class LanguageProvider extends Component {
         language: {},
         words: [],
         error: null,
+        headWord: [],
     }
     setLanguage = language => {
         this.setState({ language })
@@ -28,6 +30,9 @@ export class LanguageProvider extends Component {
         console.error(error)
         this.setState({ error })
       }
+    setHeadWord = headWord => {
+        this.setState({headWord})
+    }
       render() {
           const value = {
               language: this.state.language,
@@ -35,7 +40,10 @@ export class LanguageProvider extends Component {
               error: this.state.error,
               setError: this.setError,
               setWords: this.setWords,
-              setLanguage: this.setLanguage
+              setLanguage: this.setLanguage,
+              headWord: this.state.headWord,
+              setHeadWord: this.setHeadWord,
+
           }
           return (
             <LanguageContext.Provider value={value}>
