@@ -6,9 +6,7 @@ import './Learning.css';
 
 export default class Dashboard extends React.Component {
     static contextType = LanguageContext
-    state ={
-        correct: null,
-    }
+    
     
     componentDidMount() {
         LanguageService.getHead()
@@ -20,6 +18,12 @@ export default class Dashboard extends React.Component {
         })
 
     }
+    handleNext = e =>{
+        e.preventDefault()
+        this.componentDidMount()
+
+    }
+    
 
     handleSubmit = e =>{
         e.preventDefault()
@@ -28,23 +32,23 @@ export default class Dashboard extends React.Component {
     }
     // guessResponse = () =>{
     //     const { words = [], language = {} } = this.context;
-    //     if(this.state.correct === false ){
+    //     if(this.context.isCorrect === false ){
     //         return(
     //             <div className="incorrect">
     //             <p>Your total score is: {incorrectFixture.totalScore}</p>
     //             <h2>`Good try, but not quite right :(`</h2>
     //             <p>`The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`</p>
-    //             <Button>Try Another Word</Button>
+    //             <Button onClick={this.handleNext}>Try Another Word</Button>
     //                 </div>
                 
     //         )
-    //     }else if(this.state.correct === true){
+    //     }else if(this.context.isCorrect === true){
     //         return (
     //             <div className="correct">
     //             <p>Your total score is: {incorrectFixture.totalScore}</p>
     //             <h2>You were correct! :D</h2>
     //             <p>`The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`</p>
-    //             <Button>Try another word!</Button>
+    //             <Button onClick={this.handleNext}>Try another word!</Button>
     //             </div>
 
     //         )
