@@ -25,7 +25,8 @@ export default class Dashboard extends React.Component {
     handleGuess = e =>{
       e.preventDefault();
       let guess = this.context.guess
-      LanguageService.postGuess(guess).then(res => {
+      LanguageService.postGuess(guess)
+      .then(res => {
       this.context.setResponse(res);
       this.setState({render: false});
     });
