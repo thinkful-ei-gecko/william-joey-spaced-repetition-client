@@ -6,6 +6,10 @@ import './Learning.css';
 
 export default class Dashboard extends React.Component {
     static contextType = LanguageContext
+
+    state = {
+        render: true
+      };
     
     
     componentDidMount() {
@@ -20,29 +24,23 @@ export default class Dashboard extends React.Component {
     }
     handleGuess = e =>{
       e.preventDefault();
-      LanguageService.postGuess(this.context.guess).then(res => {
+      let guess = this.context.guess
+      LanguageService.postGuess(guess).then(res => {
       this.context.setResponse(res);
-      this.context.setRenderForm(false);
+      this.setState({render: false});
     });
     }
     handleNextWord = e =>{
         LanguageService.getHead()
         .then(headWord => {
             this.context.setHeadWord(headWord);
-            this.context.setRender=Form(true);
+            this.setState({render: true});
         })
         .catch(res => {
             this.context.setError(res.error);
         })
 
 
-    }
-    
-
-    handleSubmit = e =>{
-        e.preventDefault()
-        let guess = e.target['learn-guess-input'].value
-        LanguageService.postGuess(guess)
     }
     renderForm = () => {
         const { headWord = {} } = this.context;
@@ -56,7 +54,13 @@ export default class Dashboard extends React.Component {
                     What's the translation for this word?
                     </label>
                     <input name="learn-guess-input" id="learn-guess-input" type="text" required="required"></input>
-                    <Button type="submit" id="submit-guess-button"onClick={this.handleSubmit}>Submit your answer</Button> 
+                    <Button type="submit" 
+                    id="submit-guess-button"
+                    onClick={this.handleGuess}
+                    value={this.context.guess || ''}
+                    onChange={e => this.context.setGuess(e.target.value)}>
+                        Submit your answer
+                    </Button> 
                 </form>
                 
                 <p id="word-count">You have answered this word correctly {headWord.wordCorrectCount} times.</p>
@@ -91,12 +95,14 @@ export default class Dashboard extends React.Component {
         }
     }
     render(){
-        let { headWord = {}, setRenderForm = null} = this.context;
+        let { headWord = {}} = this.context;
+        
+        console.log(this.context.guess)
        return (
         <section className="learning">
         <p>Your total score is: {headWord.totalScore}</p>
          <h2>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
-        {setRenderForm ? this.renderForm() : this.renderResponse()}
+        {this.state.render ? this.renderForm() : this.renderResponse()}
          </section>
        )
 
