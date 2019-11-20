@@ -24,7 +24,6 @@ export class LanguageProvider extends Component {
         words: [],
         error: null,
         headWord: {},
-        
         guess: '',
         response: {}
     }
