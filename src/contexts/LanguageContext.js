@@ -11,6 +11,7 @@ const LanguageContext = React.createContext({
     setLanguage: () => {},
     setHeadWord: () => {},
     setResponse: () => {},
+    setGuess: () => {},
     guess: '',
     response: {}
 })
