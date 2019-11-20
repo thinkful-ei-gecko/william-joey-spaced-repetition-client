@@ -8,13 +8,16 @@ import './setup-icons'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
 import { LanguageProvider } from './contexts/LanguageContext';
+import { LearningProvider } from './contexts/LearningContext';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
   <BrowserRouter>
     <UserProvider>
     <LanguageProvider>
+      <LearningProvider>
       <App />
+      </LearningProvider>
     </LanguageProvider>
     </UserProvider>
   </BrowserRouter>,
