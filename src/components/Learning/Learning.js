@@ -54,7 +54,7 @@ export default class Dashboard extends React.Component {
     }
     renderForm = () => {
         const { headWord = {} } = this.context;
-        const response = this.context.response.nextWord; // hallo //haus
+        // const response = this.context.response.nextWord; // hallo //haus
         // console.log(response);
         return (
             <>

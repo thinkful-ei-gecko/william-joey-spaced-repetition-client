@@ -17,10 +17,11 @@
     height: 250px;
 }
 #submit-guess-button{
-   margin-top: 70px;
+   margin-top: 50px;
 }
 #word-count{
     font-size: 13px;
+    margin-top:0px;
 }
 .response{
     display: flex;

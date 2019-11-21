@@ -1,7 +1,7 @@
 .footer {
     color: white;
     background-color: black;
-    height: 40px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +17,9 @@
   }
   
   @media only screen and (min-width: 750px) {
+    .footer{
+      height: 40px;
+    }
     .footer-p {
       font-size: 13px;
     }
