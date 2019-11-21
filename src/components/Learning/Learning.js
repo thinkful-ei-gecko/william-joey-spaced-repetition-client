@@ -32,10 +32,11 @@ export default class Dashboard extends React.Component {
     }
     handleGuess = e =>{
       e.preventDefault();
+      this.setState({isDisabled: true})
       LanguageService.postGuess(this.context.guess)
       .then(res => {
       this.context.setResponse(res);
-      this.setState({render: false});
+      this.setState({render: false, isDisabled: false});
     })
      
     }
@@ -54,14 +55,13 @@ export default class Dashboard extends React.Component {
     }
     renderForm = () => {
         const { headWord = {} } = this.context;
-        const response = this.context.response.nextWord; // hallo //haus
         // console.log(response);
         return (
             <>
             <p id='total-score-form'>Your total score is: {headWord.totalScore}</p>
          <h2 id='translate-word'>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
            
-                <form className="guess-form" onSubmit={e => {this.handleGuess(e); this.buttonTimeout(e)}}>
+                <form className="guess-form" onSubmit={e => this.handleGuess(e)}>
                     <label htmlFor="learn-guess-input">
                     What's the translation for this word?
                     </label>
@@ -71,6 +71,7 @@ export default class Dashboard extends React.Component {
                     <Button type="submit" 
                     id="submit-guess-button"
                     disabled={this.state.isDisabled}
+                    // disabled={response === this.context.response.nextWord}
                     >
                         Submit your answer
                     </Button> 
