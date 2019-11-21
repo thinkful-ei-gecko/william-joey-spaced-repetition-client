@@ -36,6 +36,7 @@ export default class Dashboard extends React.Component {
         .then(headWord => {
             this.context.setHeadWord(headWord);
             this.setState({render: true});
+            this.context.setGuess('');
         })
         .catch(res => {
             this.context.setError(res.error);
