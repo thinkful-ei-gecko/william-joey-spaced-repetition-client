@@ -39,33 +39,20 @@ a{
 .score{
     display: flex;
     flex-direction: column;
-}
-.word-incorrect{
-    margin-left: 3.5vw;
-}
-#original{
-    width:200px;
-}
-
-.word-correct, .word-incorrect {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-.span-word {
-    margin-left: 4px;
+    margin-bottom: 5px;
 }
 
 .score-p {
-    font-size: 12px;
-    padding-right: 10px;
+    font-size: 15px;
 }
 #original{
     background-color: black;
     color: white;
     width: 100%;
     margin-top: 0px;
+    margin-bottom: 0px;
     padding-top: 5px;
     padding-bottom:5px;
     border-radius: 2px;
