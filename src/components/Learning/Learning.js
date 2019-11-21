@@ -16,7 +16,7 @@ export default class Dashboard extends React.Component {
         this.setState({
             isDisabled: true
         });
-        setTimeout(() => this.setState({isDisabled: false}), 3000)
+        setTimeout(() => this.setState({isDisabled: false}), 7000)
     }
     
     
@@ -54,14 +54,14 @@ export default class Dashboard extends React.Component {
     }
     renderForm = () => {
         const { headWord = {} } = this.context;
-        
-       
+        const response = this.context.response.nextWord; // hallo //haus
+        // console.log(response);
         return (
             <>
             <p id='total-score-form'>Your total score is: {headWord.totalScore}</p>
          <h2 id='translate-word'>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
            
-                <form className="guess-form" onSubmit={this.handleGuess}>
+                <form className="guess-form" onSubmit={e => {this.handleGuess(e); this.buttonTimeout(e)}}>
                     <label htmlFor="learn-guess-input">
                     What's the translation for this word?
                     </label>
@@ -70,7 +70,7 @@ export default class Dashboard extends React.Component {
                     onChange={e => this.context.setGuess(e.target.value)}></input>
                     <Button type="submit" 
                     id="submit-guess-button"
-                    
+                    disabled={this.state.isDisabled}
                     >
                         Submit your answer
                     </Button> 
@@ -96,7 +96,7 @@ export default class Dashboard extends React.Component {
                 <div className='DisplayFeedback'>
                 <p id="guess-answer">The correct translation for <b>{headWord.nextWord}</b> was <b>{response.answer}</b> and you chose <b>{this.context.guess}</b>!</p>
                 </div>
-                <Button disabled={this.buttonTimeout} onClick={this.handleNextWord}>Try another word!</Button>
+                <Button onClick={this.handleNextWord}>Try another word!</Button>
                     </div>
                 
             )
@@ -105,7 +105,6 @@ export default class Dashboard extends React.Component {
     }
     render(){
         
-        console.log(this.context.guess)
        return (
         <section className="learning">
         
