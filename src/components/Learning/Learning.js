@@ -24,10 +24,10 @@ export default class Dashboard extends React.Component {
     }
     handleGuess = e =>{
       e.preventDefault();
-      let guess = this.context.guess
-      LanguageService.postGuess(guess)
+      LanguageService.postGuess(this.context.guess)
       .then(res => {
       this.context.setResponse(res);
+      console.log(res)
       this.setState({render: false});
     });
     }
@@ -49,18 +49,19 @@ export default class Dashboard extends React.Component {
        
         return (
             <>
+            <p>Your total score is: {headWord.totalScore}</p>
+         <h2>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
            
-                <form className="guess-form">
+                <form className="guess-form" onSubmit={this.handleGuess}>
                     <label htmlFor="learn-guess-input">
                     What's the translation for this word?
                     </label>
                     <input name="learn-guess-input" id="learn-guess-input" type="text" required="required" 
+                    value={this.context.guess}
                     onChange={e => this.context.setGuess(e.target.value)}></input>
                     <Button type="submit" 
                     id="submit-guess-button"
                     
-                    onClick={this.handleGuess}
-                    value={this.context.guess}
                     >
                         Submit your answer
                     </Button> 
@@ -75,36 +76,26 @@ export default class Dashboard extends React.Component {
     
     renderResponse = () =>{
         let { headWord = {}, response = {}} = this.context;
-        if(response.isCorrect === false ){
+        
             return(
-                <div className="incorrect">
-                <p>Your total score is: {response.totalScore}</p>
-                <h2>`Good try, but not quite right :(`</h2>
-                <p>`The correct translation for ${headWord.nextWord} was ${response.answer} and you chose ${this.context.guess}!`</p>
+                <div className="response">
+                
+                <h2 id="isCorrect">{response.isCorrect ? 'You were correct! :D' : `Good try, but not quite right :(`}</h2>
+                <p className='DisplayScore'>Your total score is: {response.totalScore}</p>
+                <p id="guess-answer">The correct translation for <b>{headWord.nextWord}</b> was <b>{response.answer}</b> and you chose <b>{this.context.guess}</b>!</p>
                 <Button onClick={this.handleNextWord}>Try Another Word</Button>
                     </div>
                 
             )
-        }else{
-            return (
-                <div className="correct">
-                <p>Your total score is: {response.totalScore}</p>
-                <h2>You were correct! :D</h2>
-                <p>`The correct translation for ${headWord.nextWord} was ${response.answer} and you chose ${this.context.guess}!`</p>
-                <Button onClick={this.handleNextWord}>Try another word!</Button>
-                </div>
-
-            )
-        }
+        
+        
     }
     render(){
-        let { headWord = {}} = this.context;
         
         console.log(this.context.guess)
        return (
         <section className="learning">
-        <p>Your total score is: {headWord.totalScore}</p>
-         <h2>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
+        
         {this.state.render ? this.renderForm() : this.renderResponse()}
          </section>
        )

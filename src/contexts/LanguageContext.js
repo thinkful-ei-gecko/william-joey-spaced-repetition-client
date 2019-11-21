@@ -12,7 +12,7 @@ const LanguageContext = React.createContext({
     setHeadWord: () => {},
     setResponse: () => {},
     setGuess: () => {},
-    guess: '',
+    guess: null,
     response: {}
 })
 
@@ -61,6 +61,7 @@ export class LanguageProvider extends Component {
               guess: this.state.guess,
               setGuess: this.setGuess,
               response: this.state.response,
+              setResponse: this.setResponse,
               
 
           }
