@@ -87,7 +87,7 @@ export default class Dashboard extends React.Component {
                 <div className='DisplayFeedback'>
                 <p id="guess-answer">The correct translation for <b>{headWord.nextWord}</b> was <b>{response.answer}</b> and you chose <b>{this.context.guess}</b>!</p>
                 </div>
-                <Button onClick={this.handleNextWord}>Try another word!</Button>
+                <Button disabled={!response} onClick={this.handleNextWord}>Try another word!</Button>
                     </div>
                 
             )
