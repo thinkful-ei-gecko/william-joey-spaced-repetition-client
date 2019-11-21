@@ -10,6 +10,7 @@ export default class Dashboard extends React.Component {
             .then(data => {
                 this.context.setWords(data.words);
                 this.context.setLanguage(data.language);
+                this.context.setGuess('');
             })
             .catch(res => {
                 this.context.setError(res.error);

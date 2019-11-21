@@ -81,4 +81,11 @@ a{
   justify-content: center;
     width: 100%
     }
+  #original{
+      font-size: 20px;
+      font-weight: 400;
+  }
+  .dashboard-section button{
+      margin-top: 0px;
+  }
     }
