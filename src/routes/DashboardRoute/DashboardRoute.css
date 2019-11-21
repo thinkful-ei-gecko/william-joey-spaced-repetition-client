@@ -57,3 +57,28 @@ a{
     padding-bottom:5px;
     border-radius: 2px;
 }
+@media screen and (min-width: 500px){
+    .words-list{
+        width: 60%;
+    }
+    }
+@media screen and (min-width: 750px){
+.words-list{
+    width: 50%;
+}
+}
+@media screen and (min-width: 1000px){
+    .words-list{
+        width: 20%;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .words-ul{
+        display: flex;
+    flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+    width: 100%
+    }
+    }
