@@ -13,7 +13,7 @@ const LanguageContext = React.createContext({
     setResponse: () => {},
     setGuess: () => {},
     guess: null,
-    response: {}
+    response: null
 })
 
 export default LanguageContext;

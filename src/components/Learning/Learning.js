@@ -50,17 +50,18 @@ export default class Dashboard extends React.Component {
         .catch(res => {
             this.context.setError(res.error);
         })
+        
 
 
     }
     renderForm = () => {
-        const { headWord = {} } = this.context;
+        const { headWord = {}, response = {} } = this.context;
         // const response = this.context.response.nextWord; // hallo //haus
         // console.log(response);
         return (
             <>
-            <p id='total-score-form'>Your total score is: {headWord.totalScore}</p>
-         <h2 id='translate-word'>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
+            <p id='total-score-form'>Your total score is: {!response.totalScore ? headWord.totalScore : response.totalScore}</p>
+         <h2 id='translate-word'>Translate the word:</h2><span id="word">{!response.nextWord ? headWord.nextWord : response.nextWord}</span>
            
                 <form className="guess-form" onSubmit={e => this.handleGuess(e)}>
                     <label htmlFor="learn-guess-input">
@@ -90,7 +91,7 @@ export default class Dashboard extends React.Component {
             return(
                 <div className="response">
                 
-                {response.isCorrect ? <h2 id="isCorrect">You were correct! :D</h2> : <h2 id="notCorrect">Good try, but not quite right :(</h2>}
+                {response.isCorrect ? <h2 id="isCorrect">You were correct! :D</h2> : <h2 id="notCorrect">Good try, but not quite right </h2>}
                 <div className='DisplayScore'>
                 <p >Your total score is: {response.totalScore}</p>
                 </div>
@@ -101,11 +102,13 @@ export default class Dashboard extends React.Component {
                     </div>
                 
             )
-        
-        
     }
-    render(){
         
+        
+    
+
+    render(){
+        console.log(this.context.response)
        return (
         <section className="learning">
         
