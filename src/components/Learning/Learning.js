@@ -54,10 +54,11 @@ export default class Dashboard extends React.Component {
                     <label htmlFor="learn-guess-input">
                     What's the translation for this word?
                     </label>
-                    <input name="learn-guess-input" id="learn-guess-input" type="text" required="required"></input>
+                    <input name="learn-guess-input" id="learn-guess-input" type="text" required="required" 
+                    onChange={e => this.context.setGuess(e.target.value)}></input>
                     <Button type="submit" 
                     id="submit-guess-button"
-                    onChange={e => this.context.setGuess(e.target.value)}
+                    
                     onClick={this.handleGuess}
                     value={this.context.guess}
                     >
