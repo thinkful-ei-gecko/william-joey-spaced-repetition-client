@@ -57,9 +57,10 @@ export default class Dashboard extends React.Component {
                     <input name="learn-guess-input" id="learn-guess-input" type="text" required="required"></input>
                     <Button type="submit" 
                     id="submit-guess-button"
+                    onChange={e => this.context.setGuess(e.target.value)}
                     onClick={this.handleGuess}
-                    value={this.context.guess || ''}
-                    onChange={e => this.context.setGuess(e.target.value)}>
+                    value={this.context.guess}
+                    >
                         Submit your answer
                     </Button> 
                 </form>

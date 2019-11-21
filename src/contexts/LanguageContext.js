@@ -45,6 +45,7 @@ export class LanguageProvider extends Component {
         this.setState({response})
     }
     setGuess = guess =>{
+        console.log(this.state.guess)
         this.setState({guess})
     }
       render() {

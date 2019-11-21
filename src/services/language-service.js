@@ -27,7 +27,7 @@ const LanguageService = {
     },
     async postGuess(guess) {
         
-        const res = await fetch(`${config.API_ENDPOINT}/api/language/guess`, {
+        const res = await fetch(`${config.API_ENDPOINT}/language/guess`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
