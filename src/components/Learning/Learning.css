@@ -39,3 +39,48 @@
 .response p{
     margin-top: 40px;
 }
+#isCorrect{
+    color: rgb(27, 90, 8);
+}
+#notCorrect{
+    color: rgb(143, 8, 8);
+}
+@media screen and (min-width: 750px){
+    #word-count{
+        font-size: 15px;
+    }
+    #isCorrect{
+        font-size: 24px;
+    }
+    #notCorrect{
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 1200px){
+    #word{
+        font-size: 40px;
+    }
+    #translate-word{
+        font-size: 45px;
+    }
+    #total-score-form{
+        margin-top: 50px;
+        font-size: 20px;
+    }
+    #word-count{
+        font-size: 18px;
+    }
+    #isCorrect{
+        font-size: 40px;
+    }
+    #notCorrect{
+        font-size: 40px;
+    }
+    #guess-answer{
+        margin-top: 110px;
+        font-size: 30px;
+    }
+    .DisplayScore{
+        font-size: 20px;
+    }
+}

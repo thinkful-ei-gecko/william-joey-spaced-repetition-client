@@ -50,8 +50,8 @@ export default class Dashboard extends React.Component {
        
         return (
             <>
-            <p>Your total score is: {headWord.totalScore}</p>
-         <h2>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
+            <p id='total-score-form'>Your total score is: {headWord.totalScore}</p>
+         <h2 id='translate-word'>Translate the word:</h2><span id="word">{headWord.nextWord}</span>
            
                 <form className="guess-form" onSubmit={this.handleGuess}>
                     <label htmlFor="learn-guess-input">
@@ -67,10 +67,10 @@ export default class Dashboard extends React.Component {
                         Submit your answer
                     </Button> 
                 </form>
-                
+
                 <p id="word-count">You have answered this word correctly {headWord.wordCorrectCount} times.</p>
                 <p id="word-count">You have answered this word incorrectly {headWord.wordIncorrectCount} times.</p>
-              
+                
              </>   
         )
 }
@@ -81,7 +81,7 @@ export default class Dashboard extends React.Component {
             return(
                 <div className="response">
                 
-                <h2 id="isCorrect">{response.isCorrect ? 'You were correct! :D' : `Good try, but not quite right :(`}</h2>
+                {response.isCorrect ? <h2 id="isCorrect">You were correct! :D</h2> : <h2 id="notCorrect">Good try, but not quite right :(</h2>}
                 <p className='DisplayScore'>Your total score is: {response.totalScore}</p>
                 <p id="guess-answer">The correct translation for <b>{headWord.nextWord}</b> was <b>{response.answer}</b> and you chose <b>{this.context.guess}</b>!</p>
                 <Button onClick={this.handleNextWord}>Try Another Word</Button>

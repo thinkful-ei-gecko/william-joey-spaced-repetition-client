@@ -9,11 +9,9 @@ class DashboardRoute extends Component {
     return (
       <section className="dashboard-section">
         <Dashboard />
-        <Button>
-          <Link to='/learn'>
-          Start practicing
-          </Link>
-        </Button>
+        <Link to='/learn'>
+        <Button>Start Practicing</Button>
+      </Link>
       </section>
     );
   }

@@ -8,6 +8,7 @@ import LoginRoute from '../../routes/LoginRoute/LoginRoute'
 import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute'
 import LearningRoute from '../../routes/LearningRoute/LearningRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
+import Footer from '../Footer/Footer'
 import './App.css'
 
 export default class App extends Component {
@@ -49,6 +50,7 @@ export default class App extends Component {
               component={NotFoundRoute}
             />
           </Switch>
+          < Footer />
         </main>
       </div>
     );
