@@ -7,6 +7,8 @@
 #word{
     padding-top: 30px;
     font-size: 26px;
+    color: black;
+    border-bottom: 1px solid black;
 }
 .guess-form{
     padding-top: 25px;
