@@ -28,7 +28,8 @@ export default class Dashboard extends React.Component {
       .then(res => {
       this.context.setResponse(res);
       this.setState({render: false});
-    });
+    })
+     
     }
     handleNextWord = e =>{
         LanguageService.getHead()

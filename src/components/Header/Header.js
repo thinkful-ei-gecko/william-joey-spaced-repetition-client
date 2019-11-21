@@ -50,7 +50,7 @@ class Header extends Component {
         <div className="flexBody">
           <h1 className="app-h1">
             <Link to='/'>
-              Spaced repetition
+            Wortjäger
             </Link>
           </h1>
           <div className="loginLinks">
