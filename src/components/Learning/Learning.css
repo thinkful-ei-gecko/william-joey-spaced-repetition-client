@@ -14,13 +14,15 @@
     padding-top: 25px;
     margin-left:0px;
     margin-right:0px;
-    height: 250px;
+    height: 230px;
+    
 }
 #submit-guess-button{
-   margin-top: 70px;
+   margin-top: 20px;
 }
 #word-count{
     font-size: 13px;
+    margin-top:20px;
 }
 .response{
     display: flex;
@@ -31,6 +33,7 @@
 }
 .response button{
     margin-top: 120px;
+    
 }
 .response h2{
     font-size: 20px;
@@ -69,6 +72,7 @@
     }
     #word-count{
         font-size: 18px;
+        margin-bottom:0px;
     }
     #isCorrect{
         font-size: 40px;
@@ -77,10 +81,21 @@
         font-size: 40px;
     }
     #guess-answer{
-        margin-top: 110px;
+        margin-top: 70px;
         font-size: 30px;
     }
     .DisplayScore{
         font-size: 25px;
+    }
+    .response button{
+        margin-top: 80px;
+    }
+    .guess-form{
+        height: 160px;
+    }
+}
+@media screen and (min-width: 1400px){
+    .guess-form{
+        height: 250px;
     }
 }

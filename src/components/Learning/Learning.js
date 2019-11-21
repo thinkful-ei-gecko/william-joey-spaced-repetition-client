@@ -55,6 +55,7 @@ export default class Dashboard extends React.Component {
     }
     renderForm = () => {
         const { headWord = {} } = this.context;
+        // const response = this.context.response.nextWord; // hallo //haus
         // console.log(response);
         return (
             <>
@@ -76,10 +77,9 @@ export default class Dashboard extends React.Component {
                         Submit your answer
                     </Button> 
                 </form>
-
+                
                 <p id="word-count">You have answered this word correctly {headWord.wordCorrectCount} times.</p>
                 <p id="word-count">You have answered this word incorrectly {headWord.wordIncorrectCount} times.</p>
-                
              </>   
         )
 }
