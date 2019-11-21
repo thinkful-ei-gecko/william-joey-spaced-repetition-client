@@ -27,7 +27,6 @@ export default class Dashboard extends React.Component {
       LanguageService.postGuess(this.context.guess)
       .then(res => {
       this.context.setResponse(res);
-      console.log(res)
       this.setState({render: false});
     });
     }
@@ -82,9 +81,13 @@ export default class Dashboard extends React.Component {
                 <div className="response">
                 
                 {response.isCorrect ? <h2 id="isCorrect">You were correct! :D</h2> : <h2 id="notCorrect">Good try, but not quite right :(</h2>}
-                <p className='DisplayScore'>Your total score is: {response.totalScore}</p>
+                <div className='DisplayScore'>
+                <p >Your total score is: {response.totalScore}</p>
+                </div>
+                <div className='DisplayFeedback'>
                 <p id="guess-answer">The correct translation for <b>{headWord.nextWord}</b> was <b>{response.answer}</b> and you chose <b>{this.context.guess}</b>!</p>
-                <Button onClick={this.handleNextWord}>Try Another Word</Button>
+                </div>
+                <Button onClick={this.handleNextWord}>Try another word!</Button>
                     </div>
                 
             )
