@@ -90,13 +90,13 @@ export default class Dashboard extends React.Component {
 
   renderResponse = () => {
     let { headWord = {}, response = {} } = this.context;
-
+    let incorrectResponse = 'Good try, but not quite right :('
     return (
       <div className="response">
         {response.isCorrect ? (
           <h2 id="isCorrect">You were correct! :D</h2>
         ) : (
-          <h2 id="notCorrect">Good try, but not quite right </h2>
+          <h2 id="notCorrect">{incorrectResponse}</h2>
         )}
         <div className="DisplayScore">
           <p>Your total score is: {response.totalScore}</p>
