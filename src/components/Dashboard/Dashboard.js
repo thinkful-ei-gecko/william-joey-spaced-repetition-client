@@ -19,7 +19,6 @@ export default class Dashboard extends React.Component {
   }
 
   render() {
-      console.log(this.context.response)
     const { words = [], language = {} } = this.context;
     return (
       <>
