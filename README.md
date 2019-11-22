@@ -1,7 +1,53 @@
-# Spaced Repetition Capstone
+# Wortjäger (Spaced Repetition) Capstone
 
-## Setup
+## Authors
+* William Bae | Github: wbae912
+* Joey Romo | Github: joeyjr95
 
+Client:
+* Live Link to application: 
+* Link to application repository: https://github.com/thinkful-ei-gecko/william-joey-spaced-repetition-client
+
+Server:
+* Live Link to server: https://glacial-sands-91061.herokuapp.com
+* Link to server repository: https://github.com/thinkful-ei-gecko/william-joey-spaced-repetition-server
+
+Demo Account for Client:
+* Demo username: admin
+* Demo password: pass
+
+
+## Description
+Wortjäger is a React application that teaches users simple German words via spaced repetition. German words are displayed on the page and users are expected to provide the correct English translation of the word. Spaced repetition works by more frequently showing words that users get wrong and less frequently displaying words that users answer correctly.
+
+
+## Screenshots
+#### Registration Page (Once user successfully creates an account they are directed to Login page)
+![](public/images/registration.PNG)
+
+#### Login Page (Once user successfully logs in they are directed to the Dashboard page)
+![](public/images/login.PNG)
+
+#### Dashboard
+![](public/images/dashboard.PNG)
+
+#### Learning Page (Displays the German word that the user is expected to provide the English translation for)
+![](public/images/learning.PNG)
+
+#### Feedback Page (Given a CORRECT answer)
+![](public/images/correct_feedback.PNG)
+
+#### Feedback Page (Given an INCORRECT answer)
+![](public/images/incorrect_feedback.PNG)
+
+
+## Technologies
+* HTML5
+* CSS3
+* ReactJS
+
+
+## Local Dev Setup
 To setup the application
 
 1. Fork and clone the project to your machine
@@ -45,6 +91,3 @@ npm run cypress:run
 ```
 
 This will save video recordings of the test runs in the directory `./cypress/videos/`.
-
-Understanding Back-End code: https://gist.github.com/wbae912/4be13b55e29ed8e5ac56a2e2c9734271
-Understanding Client-End code: https://gist.github.com/wbae912/e31f71f84134cc1a80fdacab34edaadd
