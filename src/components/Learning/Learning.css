@@ -55,11 +55,11 @@
 }
 
 #isCorrect {
-  color: rgb(27, 90, 8);
+  color: rgb(36, 105, 15);
 }
 
 #notCorrect {
-  color: rgb(143, 8, 8);
+  color: rgb(221, 3, 3);
 }
 
 .guess-fieldset {
