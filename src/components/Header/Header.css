@@ -63,7 +63,7 @@ header a:hover {
 }
 .div-span{
     color:rgb(232, 178, 3);
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 
@@ -112,4 +112,10 @@ header a:hover {
     font-size: 18px;
   }
   
+}
+@media only screen and (min-width: 1400px) {
+    .div-span{
+        color:rgb(232, 178, 3);
+        margin-right: 30px;
+    }
 }
