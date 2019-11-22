@@ -12,15 +12,14 @@ header {
   width: 50%;
   
 }
-#first{
-    
+
+#first {
     color: rgb(221, 3, 3);
 }
-#last{
+
+#last {
     color:rgb(232, 178, 3);
 }
-
-
 
 .flexBody {
   display: flex;
@@ -38,7 +37,7 @@ header a {
 }
 
 header a:hover {
-  color: #ffd730;
+  color: rgb(221, 3, 3);
 }
 
 .loginLinks {
@@ -56,12 +55,13 @@ header a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  width: 160px;
+  width: 200px;
   color: white;
   font-size: 14px;
   margin-right: 10px;
 }
-.div-span{
+
+.div-span {
     color:rgb(232, 178, 3);
     margin-right: 20px;
 }
@@ -78,8 +78,6 @@ header a:hover {
   .link-logout {
     font-size: 15px;
   }
-  
-  
 }
 
 @media only screen and (min-width: 750px) {
@@ -96,8 +94,6 @@ header a:hover {
   .link-logout {
     font-size: 16.5px;
   }
-
-  
 }
 
 @media only screen and (min-width: 1200px) {
@@ -110,9 +106,10 @@ header a:hover {
   }
   .link-logout {
     font-size: 18px;
+    width: 700px;
   }
-  
 }
+
 @media only screen and (min-width: 1400px) {
     .div-span{
         color:rgb(232, 178, 3);

@@ -56,17 +56,19 @@ export default class Dashboard extends React.Component {
         <h2 id='translate-word'>Translate the word:</h2><span id="word">{!response.nextWord ? headWord.nextWord : response.nextWord}</span>
 
         <form className="guess-form" onSubmit={e => this.handleGuess(e)}>
-          <label htmlFor="learn-guess-input">
-            What's the translation for this word?
-          </label>
-          <input
-            name="learn-guess-input"
-            id="learn-guess-input"
-            type="text"
-            required="required"
-            value={this.context.guess}
-            onChange={e => this.context.setGuess(e.target.value)}
-          ></input>
+          <fieldset className="guess-fieldset">
+            <label htmlFor="learn-guess-input">
+              What's the translation for this word?
+            </label>
+            <input
+              name="learn-guess-input"
+              id="learn-guess-input"
+              type="text"
+              required="required"
+              value={this.context.guess}
+              onChange={e => this.context.setGuess(e.target.value)}
+            />
+          </fieldset>
           <Button
             type="submit"
             id="submit-guess-button"
