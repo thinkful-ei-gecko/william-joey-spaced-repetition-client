@@ -11,6 +11,7 @@ export default class Dashboard extends React.Component {
         this.context.setWords(data.words);
         this.context.setLanguage(data.language);
         this.context.setGuess('');
+        this.context.setResponse({})
       })
       .catch(res => {
         this.context.setError(res.error);
@@ -18,6 +19,7 @@ export default class Dashboard extends React.Component {
   }
 
   render() {
+      console.log(this.context.response)
     const { words = [], language = {} } = this.context;
     return (
       <>

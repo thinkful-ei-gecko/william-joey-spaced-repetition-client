@@ -51,11 +51,9 @@ export default class Dashboard extends React.Component {
     const { headWord = {}, response = {} } = this.context;
     return (
       <>
-        <p id="total-score-form">Your total score is: {headWord.totalScore}</p>
-        {/* <p id='total-score-form'>Your total score is: {!response.totalScore ? headWord.totalScore : response.totalScore}</p> */}
-        <h2 id="translate-word">Translate the word:</h2>
-        <span id="word">{headWord.nextWord}</span>
-        {/* <h2 id='translate-word'>Translate the word:</h2><span id="word">{!response.nextWord ? headWord.nextWord : response.nextWord}</span> */}
+       
+         <p id='total-score-form'>Your total score is: {!response.totalScore ? headWord.totalScore : response.totalScore}</p>
+        <h2 id='translate-word'>Translate the word:</h2><span id="word">{!response.nextWord ? headWord.nextWord : response.nextWord}</span>
 
         <form className="guess-form" onSubmit={e => this.handleGuess(e)}>
           <label htmlFor="learn-guess-input">
