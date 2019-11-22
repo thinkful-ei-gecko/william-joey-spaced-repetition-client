@@ -48,7 +48,7 @@ class Header extends Component {
       <header>
         <div className="flexBody">
           <h1 className="app-h1">
-            <Link to="/">Dose of Deutsche</Link>
+            <Link to="/">Wortjäger</Link>
           </h1>
           <div className="loginLinks">
             {TokenService.hasAuthToken()

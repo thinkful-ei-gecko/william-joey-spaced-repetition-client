@@ -10,6 +10,10 @@ header {
   margin-left: 1.5vw;
   font-size: 18px;
   width: 50%;
+  background-image: linear-gradient(to left,yellow, orange,yellow, orange,yellow, orange,yellow, orange,yellow, orange,yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
 }
 
 nav {
