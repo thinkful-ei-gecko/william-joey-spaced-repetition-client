@@ -20,7 +20,7 @@
 }
 
 #submit-guess-button {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 #word-count1 {
@@ -115,10 +115,19 @@
   .guess-form {
     height: 160px;
   }
+  #submit-guess-button {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
   .guess-form {
     height: 250px;
+  }
+  #submit-guess-button {
+    margin-top: 60px;
+  }
+  .learning-section {
+    margin-bottom: 5%;
   }
 }
