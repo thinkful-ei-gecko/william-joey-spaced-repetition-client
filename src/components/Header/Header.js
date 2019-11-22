@@ -13,7 +13,7 @@ class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div className="link-logout">
+      <div className="link-logout" aria-live="polite">
         <span className="div-span">{this.context.user.name}</span>
         <nav>
           <Link
@@ -30,7 +30,7 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <div className="links">
+      <div className="links" aria-live="polite">
         <nav>
           <Link to="/login" className="login-nav">
             Login
@@ -50,7 +50,7 @@ class Header extends Component {
           <h1 className="app-h1">
             <Link to="/"><span id='first'>Wort</span><span id='last'>jäger</span></Link>
           </h1>
-          <div className="loginLinks">
+          <div className="loginLinks" aria-live="polite">
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}

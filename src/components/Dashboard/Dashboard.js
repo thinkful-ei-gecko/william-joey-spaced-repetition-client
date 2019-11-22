@@ -32,7 +32,7 @@ export default class Dashboard extends React.Component {
           <ul className="words-ul">
 
             {words.map(word => (
-              <li key={word.id} id={word.id} className="words-list">
+              <li key={word.id} id={word.id} className="words-list" aria-live="polite">
                 <h4 className="original">{word.original}</h4>
                 <div className="score">
                   <p className="score-p">

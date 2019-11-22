@@ -28,6 +28,7 @@ export default class Dashboard extends React.Component {
         this.context.setError(res.error);
       });
   }
+
   handleGuess = e => {
     e.preventDefault();
     this.setState({ isDisabled: true });
@@ -36,6 +37,7 @@ export default class Dashboard extends React.Component {
       this.setState({ render: false, isDisabled: false });
     });
   };
+
   handleNextWord = e => {
     LanguageService.getHead()
       .then(headWord => {
@@ -47,24 +49,25 @@ export default class Dashboard extends React.Component {
         this.context.setError(res.error);
       });
   };
+
   renderForm = () => {
     const { headWord = {}, response = {} } = this.context;
     return (
       <>
-       
-         <p id='total-score-form'>Your total score is: {!response.totalScore ? headWord.totalScore : response.totalScore}</p>
-        <h2 id='translate-word'>Translate the word:</h2><span id="word">{!response.nextWord ? headWord.nextWord : response.nextWord}</span>
+        <p id='total-score-form' aria-live="polite">Your total score is: {!response.totalScore ? headWord.totalScore : response.totalScore}</p>
+        <h2 id='translate-word'>Translate the word:</h2><span id="word" aria-live="polite">{!response.nextWord ? headWord.nextWord : response.nextWord}</span>
 
         <form className="guess-form" onSubmit={e => this.handleGuess(e)}>
           <fieldset className="guess-fieldset">
-            <label htmlFor="learn-guess-input">
+            <label htmlFor="learn-guess-input" aria-label="What's the translation for this word?">
               What's the translation for this word?
             </label>
             <input
               name="learn-guess-input"
               id="learn-guess-input"
               type="text"
-              required="required"
+              aria-required="true"
+              required
               value={this.context.guess}
               onChange={e => this.context.setGuess(e.target.value)}
             />
@@ -78,11 +81,11 @@ export default class Dashboard extends React.Component {
           </Button>
         </form>
 
-        <p id="word-count1">
+        <p id="word-count1" aria-live="polite">
           You have answered this word correctly {headWord.wordCorrectCount}{" "}
           times.
         </p>
-        <p id="word-count2">
+        <p id="word-count2" aria-live="polite">
           You have answered this word incorrectly {headWord.wordIncorrectCount}{" "}
           times.
         </p>
@@ -94,17 +97,17 @@ export default class Dashboard extends React.Component {
     let { headWord = {}, response = {} } = this.context;
     let incorrectResponse = 'Good try, but not quite right :('
     return (
-      <div className="response">
+      <div className="response" aria-live="polite">
         {response.isCorrect ? (
           <h2 id="isCorrect">You were correct! :D</h2>
         ) : (
           <h2 id="notCorrect">{incorrectResponse}</h2>
         )}
-        <div className="DisplayScore">
+        <div className="DisplayScore" aria-live="polite">
           <p>Your total score is: {response.totalScore}</p>
         </div>
         <div className="DisplayFeedback">
-          <p id="guess-answer">
+          <p id="guess-answer" aria-live="polite">
             The correct translation for <b>{headWord.nextWord}</b> was{" "}
             <b>{response.answer}</b> and you chose <b>{this.context.guess}</b>!
           </p>
@@ -116,7 +119,7 @@ export default class Dashboard extends React.Component {
 
   render() {
     return (
-      <section className="learning">
+      <section className="learning" aria-live="polite">
         {this.state.render ? this.renderForm() : this.renderResponse()}
       </section>
     );
