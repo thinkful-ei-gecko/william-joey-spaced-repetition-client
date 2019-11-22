@@ -49,6 +49,9 @@ header a:hover {
 .login-nav, .signup-nav, .logout-nav {
   font-size: 14px;
 }
+.login-nav, .signup-nav{
+  margin-right: 12px;
+}
 
 .link-logout {
   display: flex;
