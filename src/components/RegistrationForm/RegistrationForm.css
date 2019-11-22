@@ -1,64 +1,63 @@
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {
-    margin-top: 3vh;
-    margin-bottom: 5vh;
-    transition-duration: 0.4s;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  transition-duration: 0.4s;
 }
 
 button:hover {
-    background-color: rgb(206, 206, 206);
-    color: white;
+  background-color: rgb(206, 206, 206);
+  color: white;
 }
 
 .signup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
 }
 
 .Required {
-    color: red;
+  color: red;
 }
 
 .app-description {
-    text-align: center;
+  text-align: center;
 }
 
 .signup-h2 {
-    margin-bottom: 1.5%;
+  margin-bottom: 1.5%;
 }
 
 .register-label {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .toLogin-link {
-    text-align: center;
-    width: 200px;
-    font-size: 15px;
+  text-align: center;
+  width: 200px;
+  font-size: 15px;
 }
 
 @media only screen and (min-width: 750px) {
-    .register-label {
-        font-size: 15px;
-    }
-    .toLogin-link {
-        font-size: 16px;
-    }
+  .register-label {
+    font-size: 15px;
+  }
+  .toLogin-link {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (min-width: 1300px) {
-    .register-label {
-        font-size: 18px;
-    }
-    .toLogin-link {
-        font-size: 16.5px;
-    }
+  .register-label {
+    font-size: 18px;
+  }
+  .toLogin-link {
+    font-size: 16.5px;
+  }
 }

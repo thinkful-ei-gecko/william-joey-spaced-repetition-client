@@ -1,5 +1,5 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 export default class Footer extends React.Component {
   render() {
@@ -7,6 +7,6 @@ export default class Footer extends React.Component {
       <footer className="footer">
         <p className="footer-p">Created by William Bae & Joey Romo</p>
       </footer>
-    )
+    );
   }
 }

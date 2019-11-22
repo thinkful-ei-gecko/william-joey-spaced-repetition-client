@@ -1,47 +1,46 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../../services/token-service'
-import UserContext from '../../contexts/UserContext'
-import './Header.css'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import TokenService from "../../services/token-service";
+import UserContext from "../../contexts/UserContext";
+import "./Header.css";
 
 class Header extends Component {
-  static contextType = UserContext
+  static contextType = UserContext;
 
   handleLogoutClick = () => {
-    this.context.processLogout()
-  }
+    this.context.processLogout();
+  };
 
   renderLogoutLink() {
     return (
-      <div className="link-logout"> 
-        <span className="div-span">
-          {this.context.user.name}
-        </span>
+      <div className="link-logout">
+        <span className="div-span">{this.context.user.name}</span>
         <nav>
           <Link
             onClick={this.handleLogoutClick}
-            to='/login'
-            className='logout-nav'  
+            to="/login"
+            className="logout-nav"
           >
             Logout
           </Link>
         </nav>
       </div>
-    )
+    );
   }
 
   renderLoginLink() {
     return (
-    <div className="links">
-      <nav>
-       
-        <Link to='/login' className="login-nav">Login</Link>
-       
-        {' '}
-        <Link to='/register' className="signup-nav">Sign up</Link>
-      </nav>
-    </div>
-    )
+      <div className="links">
+        <nav>
+          <Link to="/login" className="login-nav">
+            Login
+          </Link>{" "}
+          <Link to="/register" className="signup-nav">
+            Sign up
+          </Link>
+        </nav>
+      </div>
+    );
   }
 
   render() {
@@ -49,19 +48,17 @@ class Header extends Component {
       <header>
         <div className="flexBody">
           <h1 className="app-h1">
-            <Link to='/'>
-            Wortjäger
-            </Link>
+            <Link to="/">Wortjäger</Link>
           </h1>
           <div className="loginLinks">
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}
-            </div>
+          </div>
         </div>
       </header>
     );
   }
 }
 
-export default Header
+export default Header;
