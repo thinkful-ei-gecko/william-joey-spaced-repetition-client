@@ -28,8 +28,8 @@ export default class Dashboard extends React.Component {
                 <div className="words">
                     <ul className='words-ul'>
                         {words.map(word =>
-                                <li key={word.id} className="words-list">
-                                    <h4 id="original">{word.original}</h4>
+                                <li key={word.id} id={word.id} className="words-list">
+                                    <h4 className="original">{word.original}</h4>
                                     <div className="score">
                                         <p className='score-p'>correct answer count: {word.correct_count}</p>
                                         <p className='score-p'>incorrect answer count: {word.incorrect_count}</p>
