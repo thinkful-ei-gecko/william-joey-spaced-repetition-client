@@ -10,6 +10,7 @@ header {
     margin-left: 1.5vw;
     font-size: 18px;
     width: 50%;
+    
 }
 nav{
     margin-bottom: 4px;
@@ -65,6 +66,7 @@ header a:hover {
 @media only screen and (min-width: 500px) {
     .app-h1 {
         font-size: 20px;
+       
     }
     .login-nav, .signup-nav, .logout-nav {
         margin-right: 12px;
