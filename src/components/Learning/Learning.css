@@ -85,16 +85,15 @@
     font-size: 45px;
   }
   #total-score-form {
-    margin-top: 80px;
     font-size: 25px;
   }
   #word-count1 {
     font-size: 18px;
-    margin-bottom: 0px;
+    margin-top: 5%;
   }
   #word-count2 {
     font-size: 18px;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
   }
   #isCorrect {
     font-size: 40px;
@@ -103,23 +102,16 @@
     font-size: 40px;
   }
   #guess-answer {
-    margin-top: 70px;
     font-size: 30px;
   }
   .DisplayScore {
     font-size: 25px;
   }
-  .response button {
-    margin-top: 80px;
-  }
   .guess-form {
     height: 160px;
   }
   #submit-guess-button {
-    margin-top: 20px;
-  }
-  .learning-section {
-    margin-bottom: 5%;
+    margin-top: 40px;
   }
 }
 
@@ -132,5 +124,9 @@
   }
   .learning-section {
     margin-bottom: 5%;
+  }
+  #word-count1 {
+    font-size: 18px;
+    margin-top: 0%;
   }
 }
