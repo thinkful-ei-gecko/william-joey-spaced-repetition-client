@@ -67,6 +67,7 @@ export default class Dashboard extends React.Component {
               id="learn-guess-input"
               type="text"
               aria-required="true"
+              placeholder="Enter the English translation.."
               required
               value={this.context.guess}
               onChange={e => this.context.setGuess(e.target.value)}
